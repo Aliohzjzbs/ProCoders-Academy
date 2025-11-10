@@ -1,0 +1,199 @@
+<!doctype html>
+
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ProCoders Academy — المنصة السحرية لتعليم البرمجة والهاكر الأخلاقي</title>
+  <style>
+    :root{
+      --red:#e11d2b;
+      --dark:#0b0b0d;
+      --muted:#f6f6f6;
+      --accent:#ff4d4d;
+      --neon1: #ff8a8a;
+      --neon2: #ffd166;
+      --neon3: #8b5cf6;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Cairo','Segoe UI',sans-serif;background:radial-gradient(circle at top,var(--dark) 0%, #120406 100%);color:var(--muted);overflow-x:hidden;}
+    .wrap{max-width:1200px;margin:48px auto;padding:24px;position:relative;animation:fadeIn 1.4s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--red),#b7000a);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;box-shadow:0 8px 30px rgba(225,29,43,0.18)}
+    h1{margin:0;font-size:24px}
+    p.lead{margin:2px 0 0 0;color:#ffdede;opacity:0.95}
+    .download-area{display:flex;flex-direction:column;align-items:flex-end;gap:8px}/* Attention animated banner above download */
+.attention{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--neon1),var(--neon2),var(--neon3));
+  color:#0b0b0d;
+  font-weight:800;
+  box-shadow:0 12px 40px rgba(139,92,246,0.12), 0 6px 18px rgba(255,138,138,0.08) inset;
+  transform:translateY(0);
+  animation:neonGlow 2.6s ease-in-out infinite;
+  cursor:default;
+}
+@keyframes neonGlow{
+  0%{filter:brightness(1);transform:translateY(0)}
+  50%{filter:brightness(1.12) drop-shadow(0 6px 18px rgba(255,138,138,0.22));transform:translateY(-6px)}
+  100%{filter:brightness(1);transform:translateY(0)}
+}
+.attention .spark{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 6px 16px rgba(255,255,255,0.18)}
+.btn-download{background:linear-gradient(180deg,var(--accent),var(--red));color:white;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(225,29,43,0.22);border:0;transition:transform .18s ease,box-shadow .18s ease}
+.btn-download:hover{transform:scale(1.05)}
+
+.content{display:grid;grid-template-columns:1fr 340px;gap:28px;margin-top:26px}
+main{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.45);backdrop-filter:blur(12px);animation:glow 4s infinite alternate}
+@keyframes glow{from{box-shadow:0 0 10px rgba(225,29,43,0.25)}to{box-shadow:0 0 30px rgba(225,29,43,0.6)}}
+.lang{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .3s ease,box-shadow .3s ease}
+.lang:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 10px 30px rgba(225,29,43,0.4)}
+.lang h3{margin:0 0 6px 0;color:#fff}
+.lang p{margin:0;font-size:14px;color:#ffdede;opacity:0.95}
+aside{position:sticky;top:28px;height:max-content}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(0,0,0,0.5);text-align:center}
+.cta-whatsapp{background:linear-gradient(90deg,#25D366,#1ebea5);color:white;padding:14px 20px;border-radius:50px;text-decoration:none;font-weight:800;display:inline-block;margin-top:10px;transition:transform .25s ease}
+.cta-whatsapp:hover{transform:scale(1.08)}
+footer{text-align:center;color:#ffb4b4;font-size:13px;margin-top:20px}
+/* زر الواتساب الثابت */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:34px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.4);
+  cursor:pointer;
+  animation:float 3s ease-in-out infinite;
+  z-index:999;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+.faq{margin-top:18px}
+.faq h3{margin:8px 0;color:#fff}
+.faq p{margin:6px 0 14px 0;color:#ffdede;opacity:0.95}
+@media(max-width:880px){.content{grid-template-columns:1fr}aside{position:relative;top:auto}.attention{align-self:center}}
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">PC</div>
+        <div>
+          <h1>ProCoders Academy — المنصة السحرية لتعليم البرمجة والهاكر الأخلاقي</h1>
+          <p class="lead">تعلم البرمجة والاختراق الأخلاقي بأسلوب سحري ومبهر يأخذك لعالم التقنية الحقيقي.</p>
+        </div>
+      </div><div class="download-area">
+    <div class="attention" aria-hidden="true">
+      <div class="spark"></div>
+      <div>🔥 عرض خاص — سجل الآن واحصل على جلسة تعريفية مجانية ✨</div>
+    </div>
+    <a class="btn-download" href="https://www.mediafire.com/file/h1wo5yliz7vyedr/ProCoders_Academy_1.0_r.apk/file" target="_blank">تنزيل المنصة</a>
+  </div>
+</header>
+
+<div class="content">
+  <main>
+    <h2>نبذة عن المنصة</h2>
+    <p>منصتنا تجمع بين الإبداع والاحتراف في عالم البرمجة والأمن السيبراني. نأخذك خطوة بخطوة في عالم الهاكر الأخلاقي بطريقة ممتعة ومليئة بالإثارة.</p>
+
+    <h2>تعرف على لغات البرمجة</h2>
+    <div class="grid-langs" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px">
+      <div class="lang">
+        <h3>Python</h3>
+        <p>اللغة الأشهر في تحليل الثغرات والبرمجة الذكية، تُستخدم في أتمتة المهام، بناء الأدوات، وتحليل البيانات.</p>
+      </div>
+      <div class="lang">
+        <h3>JavaScript / TypeScript</h3>
+        <p>لإنشاء واجهات الويب التفاعلية وتطبيقات الـFull‑Stack. TypeScript تضيف طبقة أمان نوعية للـJS.</p>
+      </div>
+      <div class="lang">
+        <h3>C & C++</h3>
+        <p>لغات منخفضة المستوى لمهام الأداء العالي وتحليل الثغرات المتعلقة بالذاكرة.</p>
+      </div>
+      <div class="lang">
+        <h3>Go (Golang)</h3>
+        <p>لغة حديثة من Google، قوية في الشبكات والخوادم، ممتازة لبناء أدوات شبكية وخدمات سريعة.</p>
+      </div>
+      <div class="lang">
+        <h3>Rust</h3>
+        <p>لغة حديثة تركز على الأمان والسرعة، مناسبة لتطوير أدوات أمان خالية من ثغرات الذاكرة.</p>
+      </div>
+      <div class="lang">
+        <h3>Kotlin & Swift</h3>
+        <p>للتطوير على أجهزة Android (Kotlin) وiOS (Swift) وبناء تطبيقات محمولة آمنة وسلسة.</p>
+      </div>
+      <div class="lang">
+        <h3>PHP & SQL</h3>
+        <p>مهمة لفهم هندسة الويب التقليدية والتعامل مع قواعد البيانات، ومعرفة كيفية تأمينها ضد الهجمات.</p>
+      </div>
+      <div class="lang">
+        <h3>HTML & CSS & Bash</h3>
+        <p>الأساسيات لبناء واجهات المستخدم وإتقان سطر الأوامر لإدارة الأنظمة وأتمتة المهام.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <h2>استفسارات للمبتدئين</h2>
+      <div class="q">
+        <h3>1. أي لغة أبدأ بها لو أنا مبتدئ؟</h3>
+        <p>ابدأ بـ Python — سهلة الفهم، وتُستخدم في مجالات متعددة. بعد إتقان الأساسيات انتقل إلى JavaScript أو أي لغة تناسب هدفك.</p>
+      </div>
+      <div class="q">
+        <h3>2. كم من الوقت أحتاج لأصبح مطورًا؟</h3>
+        <p>يعتمد على الجهد والوقت اليومي؛ حضور دورة intensive مع مشاريع عملية يمكن أن يضعك في موقف جيد خلال 3–6 أشهر.</p>
+      </div>
+      <div class="q">
+        <h3>3. هل أحتاج خلفية في الرياضيات؟</h3>
+        <p>مستوى أساسي من المنطق كافٍ للبداية. مجالات مثل تحليل البيانات والذكاء الصناعي تتطلب رياضيات أكثر.</p>
+      </div>
+      <div class="q">
+        <h3>4. كيف أبدأ في الأمن السيبراني بدون خبرة؟</h3>
+        <p>ابدأ بمفاهيم الشبكات، أنظمة التشغيل (Linux)، ثم اتعلم أدوات الاختبار والبروتوكولات. التدريب العملي أهم من القراءة فقط.</p>
+      </div>
+      <div class="q">
+        <h3>5. هل التعلم عبر الإنترنت كافي؟</h3>
+        <p>نعم، مع مشاريع تطبيقية وممارسة مستمرة. حاول الانضمام لمجتمعات ومسابقات CTF لتسريع التعلم.</p>
+      </div>
+      <div class="q">
+        <h3>6. ما هي المهارات المطلوبة لوظائف الهاكر الأخلاقي؟</h3>
+        <p>فهم عميق للشبكات، أنظمة التشغيل، لغات برمجة نصية (Python)، أدوات اختبار الاختراق، ومهارات التحليل.</p>
+    </div>
+
+    <footer>
+      <div>ProCoders Academy — السحر يبدأ من هنا ✨</div>
+    </footer>
+  </main>
+
+  <aside>
+    <div class="card">
+      <i class="fab fa-whatsapp" style="font-size:40px;color:#25D366;"></i>
+      <p style="color:#fff;margin:10px 0 8px">تواصل معنا عبر واتساب للحصول على الكورس مباشرة</p>
+      <a class="cta-whatsapp" href="https://wa.me/201152800730?text=مرحبًا!%20أرغب%20في%20التواصل%20بشأن%20كورسات%20ProCoders%20Academy" target="_blank">فتح واتساب</a>
+    </div>
+  </aside>
+</div>
+
+  </div>
+  <a href="https://wa.me/201152800730?text=مرحبًا!%20أرغب%20في%20التواصل%20مع%20ProCoders%20Academy" class="whatsapp-float" target="_blank" title="تواصل عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>
